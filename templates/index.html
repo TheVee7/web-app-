@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - TheHelpingApp{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Welcome to TheHelpingApp</h2>
+    <p>This is a basic home page using HTML and Flask.</p>
+    <a href="{{ url_for('OrderDHA') }}" class="button">ORDER DHA</a>
+</section>
+{% endblock %}
+
+
+
+
