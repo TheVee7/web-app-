@@ -10,5 +10,9 @@ def home():
 def OrderDHA():
     return render_template("DHA.html")
 
+@app.route("/OrderAssignments")
+def OrderAssignment():
+    return render_template("Assignment.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
