@@ -3,16 +3,55 @@
 {% block title %}Home - TheHelpingApp{% endblock %}
 
 {% block content %}
-<section>
-    <h2>Welcome to TheHelpingApp</h2>
-    <p>This is a basic home page using HTML and Flask.</p>
-    <a href="{{ url_for('OrderDHA') }}" class="button">ORDER DHA</a>
-    <a href="{{ url_for('OrderAssignment') }}" class="button">ORDER ASSIGNMENT</a>
-    <a href="https://forms.gle/wtvg9DBRzohgKMvQ6" class="button">JOIN DEBATE COMMUNITY</a>
-    <a href="https://www.instagram.com/thehelpingapp/" class="button" target="_blank">FOLLOW US ON INSTAGRAM</a>
+    <style>
+        .app-description {
+            margin: 20px 0;
+        }
+        .app-description h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .app-description p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+    </style>
+<section class="mt-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Image Column (left side on larger screens) -->
+            <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+                <img src="{{ url_for('static', filename='images/The helping app-logos_transparent.png') }}" alt="LOGO" class="img-fluid" style="max-width: 100%; height: auto;">
+            </div>
+            <!-- Text Column (right side on larger screens) -->
+            <div class="col-md-6 text-center text-md-left">
+                <h2 class="mt-4 mt-md-0">Welcome to TheHelpingApp</h2>
+                <p class="lead">The Helping App where you can order DHA, find a learning partner, and many more things.</p>
+            </div>
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="d-grid gap-2 col-12 col-md-6 mx-auto mt-4">
+            <a href="{{ url_for('OrderDHA') }}" class="btn btn-primary btn-lg">Order DHA</a>
+            <a href="{{ url_for('OrderAssignment') }}" class="btn btn-warning btn-lg">Order Assignment</a>
+            <a href="https://forms.gle/wtvg9DBRzohgKMvQ6" class="btn btn-success btn-lg">Join Debate Community</a>
+            <a href="https://www.instagram.com/thehelpingapp/" class="btn btn-danger btn-lg" target="_blank">Follow Us on Instagram</a>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="app-description">
+            <h2>About TheHelpingApp</h2>
+            <p><strong>TheHelpingApp</strong> is a versatile platform designed to assist students in their academic and extracurricular endeavors. It provides a range of features aimed at enhancing the educational experience for users, particularly those at Dayalbagh Educational Institute in Agra.</p>
+            <p>Key features of TheHelpingApp include:</p>
+            <ul>
+                <li><strong>Daily Home Assignments (DHA) Ordering:</strong> Users can efficiently manage and order their daily home assignments, ensuring they stay on top of their academic responsibilities.</li>
+                <li><strong>Assignment and Project Help:</strong> The app connects students with resources and assistance for various assignments and projects, helping them achieve better academic outcomes.</li>
+                <li><strong>Partner Finder:</strong> A unique feature that facilitates finding study partners or collaborators for academic work, promoting peer learning and teamwork.</li>
+                <li><strong>Community Engagement:</strong> The app offers opportunities to join relevant communities, such as debate clubs, and follow updates through social media integrations like Instagram.</li>
+            </ul>
+            <p>TheHelpingApp aims to streamline academic support and foster a collaborative learning environment for students, making educational tasks more manageable and connecting them with valuable resources and peers.</p>
+            <h5>If any issues contact us at thehelpingapp.dei@gmail.com</h5>
+        </div>
+    </div>
 </section>
 {% endblock %}
-
-
-
-
