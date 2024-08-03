@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}More Option - TheHelpingApp{% endblock %}
+
+{% block content %}
+<script>
+    function confirmDownload(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        if (confirm("Do you want to download the app?")) {
+            window.location.href = event.target.href; 
+        }
+    }
+</script>
+<style>
+    #image2 img {
+        display: block;
+        max-width: 100%;
+        height: auto; /* Adjusted to maintain aspect ratio */
+        margin: 0 auto;
+    }
+    .motive-section {
+        padding: 50px 20px;
+        border-radius: 8px;
+        margin: 30px 0;
+    }
+    .motive-section h2 {
+        color: #343a40;
+        margin-bottom: 20px;
+    }
+    .motive-section p {
+        color: #495057;
+        line-height: 1.6;
+    }
+    .motive-section ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .motive-section li {
+        background: url('https://img.icons8.com/material-outlined/24/000000/checkmark.png') no-repeat left center;
+        padding-left: 30px;
+        margin-bottom: 10px;
+        color: #495057;
+    }
+</style>
+<section>
+    <div id="image2">
+        <img src="{{ url_for('static', filename='images/The helping app-logos_black.png') }}" alt="The Helping App Logo">
+    </div>
+    <div class="d-grid gap-2 col-12 col-md-6 mx-auto mt-4">
+        <a href="https://forms.gle/dC2eTF8kRYZq9Sbn6" class="btn btn-primary btn-lg">Partner Find</a>
+        <a href="https://forms.gle/yvxzT9iehN8Ly28R7" class="btn btn-warning btn-lg">Work With Us</a>
+        <a href="https://forms.gle/KmNi2RCry8S6TG6i7" class="btn btn-success btn-lg">Any Other Help</a>
+        <a href="{{ url_for('static', filename='TheHelpingApp.apk') }}" class="btn btn-danger btn-lg" onclick="confirmDownload(event)">Download App</a>
+    </div>
+</section>
+
+<!-- Motive Section -->
+<section class="motive-section">
+    <div class="container">
+        <h2>Our Motive</h2>
+        <p>TheHelpingApp is dedicated to giving students more time to learn new skills by streamlining their academic tasks. Our app helps students manage their daily home assignments (DHA) efficiently, so they can focus on skill development and personal growth.</p>
+        
+        <h3>Key Features and Objectives:</h3>
+        <ul>
+            <li><strong>Time Management and Academic Efficiency:</strong><br>
+                - <strong>Daily Home Assignments (DHA):</strong> Manage and complete assignments more efficiently.<br>
+                - <strong>Assignment and Project Assistance:</strong> Get expert help to save time and focus on learning new skills.</li>
+
+            <li><strong>Skill Development and Partner Finding:</strong><br>
+                - <strong>Partner Finder Program:</strong> Connect with peers for collaborative learning, such as learning Python together.<br>
+                - <strong>Debate Society:</strong> Engage in debates to develop critical thinking and public speaking skills.</li>
+
+            <li><strong>Student-Driven Economy:</strong><br>
+                - <strong>Earn by Learn Model:</strong> Earn money by helping with assignments. The app takes only a 10-20% commission, ensuring fair compensation for student workers.</li>
+        </ul>
+
+        <p>At TheHelpingApp, we create an environment that helps students thrive academically, personally, and financially. Join us to save time, learn new skills, and be part of a supportive student community.</p>
+    </div>
+</section>
+{% endblock %}
